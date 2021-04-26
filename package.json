@@ -20,6 +20,7 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
-        "bulma-pricingtable": "^0.2.0"
+        "bulma-pricingtable": "^0.2.0",
+        "bulma-quickview": "^2.0.0"
     }
 }

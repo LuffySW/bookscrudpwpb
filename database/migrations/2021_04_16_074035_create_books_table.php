@@ -19,7 +19,6 @@ class CreateBooksTable extends Migration
             $table->string('isbn', 64);
             $table->integer('pages');
             $table->text('short_description')->nullable();
-            $table->string('cover_img', 100)->nullable(); 
             $table->foreignId('author_id')->constrained();
             $table->timestamps();
         });

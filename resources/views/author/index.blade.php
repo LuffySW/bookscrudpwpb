@@ -38,7 +38,7 @@
                                 <optgroup label="Descending">
                                     <option @if ($sortBy == 'name_desc') selected @endif value='name_desc'>Author name</option>
                                     <option @if ($sortBy == 'surname_desc') selected @endif value='surname_desc'>Author surname</option>
-                                    <option @if ($sortBy == 'books_desc') selected @endif value='books_desc'>Books written</option>
+                                    <option @if ($sortBy == 'books_desc') selected @endif value='books_desc '>Books written</option>
                             </select>
                         @else
                             <select disabled name='sort'>
@@ -81,7 +81,7 @@
                             <tr class='author-row'>
                                 <td>{{ $author->id }}</td>
                                 <td class='author-quickshow' data-show="quickview" data-target="quickviewDefault"
-                                    data-url={{ route('author.index', $author) }}>{{ $author->name }}</td>
+                                    data-url={{ route('author.show', $author) }}>{{ $author->name }}</td>
                                 <td>{{ $author->surname }}</td>
                                 <td>
                                     <div class="tag is-medium 

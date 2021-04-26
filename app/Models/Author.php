@@ -26,8 +26,8 @@ class Author extends Model
         $file = $authorData->file('author_picture');
         if (!empty($file)) {
             $name = rand(100000000, 999999999) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('img/author'), $name);
-            $this->picture = url("/img/author/{$name}");
+            $file->move(public_path('img'), $name);
+            $this->picture = url("/img/{$name}");
         }
 
         $this->name = $authorData->author_name;

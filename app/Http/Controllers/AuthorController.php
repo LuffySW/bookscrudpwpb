@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use Illuminate\Http\Request;
 use Validator;
+use View;
+use Response;
 
 class AuthorController extends Controller
 {
@@ -33,7 +35,7 @@ class AuthorController extends Controller
                 $authors->appends(['sort' => $request->sort]);
             }
         } else {
-            $authors = Author::paginate(10);
+            $authors = Author::orderBy('id')->paginate(10);
         }
 
         return view('author.index', [
@@ -64,7 +66,7 @@ class AuthorController extends Controller
             $request->all(),
             [
                 'author_name' => ['required', 'between:3,64', 'alpha'],
-                'author_surname' => ['required', 'between:3,64', 'alpha'],
+                'author_surname' => ['required', 'between:3,64', 'alpha_dash'],
             ],
             [
                 'required' => ':attribute field is required',
@@ -92,7 +94,10 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        //
+        $authorInfo = View::make('author.show')
+        ->with(['author' => $author])
+        ->render();
+        return Response::json(['html' => $authorInfo]);
     }
 
     /**
@@ -136,7 +141,7 @@ class AuthorController extends Controller
             return redirect()->back()->withErrors($validator);
         }
         $author->saveAuthor($request);
-        return redirect()->route('author.index')->with('success_message', "Author $request->author_name was successfully added");
+        return redirect()->route('author.index')->with('success_message', "Author $request->author_name was successfully updated");
     }
 
     /**
@@ -153,6 +158,6 @@ class AuthorController extends Controller
 
     public function deletePicture(Author $author) {
         Author::removePicture($author);
-        return redirect()->back()->with('success_message', "Picture deleted");
+        return redirect()->back();
     }
 }

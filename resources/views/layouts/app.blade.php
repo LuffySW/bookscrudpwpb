@@ -47,13 +47,7 @@
                         <a href='{{ route('home') }}'>Home</a>
                     </li>
                     <li>
-                        <a id="header-toggle">Author
-                            <i class="fas fa-chevron-down ignore"></i>
-                        </a>
-                        <ul class='is-hidden'>
-                            <li><a href='{{ route('author.index') }}'>Author list</a></li>
-                            <li><a href='{{ route('author.create') }}'>Add new author</a></li>
-                        </ul>
+                        <a href='{{ route('author.index') }}'>Authors</a>
                     </li>
                     <li>
                         <a id="header-toggle">Book
@@ -61,7 +55,7 @@
                         </a>
                         <ul class='is-hidden'>
                             <li><a href='{{ route('book.index') }}'>Book list</a></li>
-                            <li><a href='{{ route('book.create') }}'>Add new bet</a></li>
+                            <li><a href='{{ route('book.create') }}'>Add new book</a></li>
                         </ul>
                     </li>
             </aside>

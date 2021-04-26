@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
     {
 
         $faker = Faker::create();
-        $books = 150;
-        $authors = 35;
+        $books = 80;
+        $authors = 20;
 
         DB::table('users')->insert([
             'name' => 'Gvidas',
@@ -43,7 +43,6 @@ class DatabaseSeeder extends Seeder
                 'isbn' => $faker->isbn13(),
                 'pages' => rand(10,400),
                 'short_description' => $faker->realText(200,2),
-                'cover_img' => $faker->imageUrl(80, 120),
                 'author_id' => rand(1,$authors),
                 'created_at' => $faker->dateTimeThisYear(),
                 'updated_at' => $faker->dateTimeThisYear(),

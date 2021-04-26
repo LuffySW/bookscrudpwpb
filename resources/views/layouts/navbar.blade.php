@@ -8,8 +8,9 @@
         <div id="burger-menu" class="navbar-menu">
             <div class="navbar-start is-hidden-desktop">
                 <a class="navbar-item" href="">Home</a>
-                <a class="navbar-item" href=create">Add new user</a>
-                <a class="navbar-item" href=update">Update</a>
+                <a class="navbar-item" href='{{ route('author.index') }}'>Author list</a>
+                <a class="navbar-item" href='{{ route('book.index') }}'>Book list</a>
+                <a class="navbar-item" href='{{ route('book.create') }}'>New book</a>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item has-dropdown is-hoverable">

@@ -1,13 +1,13 @@
 {{-- FILTERING AND SORTING --}}
 <div class="control">
     <div class="select">
-        @if ($horses->count() != 0)
+        @if ($authors->count() != 0)
             <select name='filter_by'>
                 <option value='0' disabled @if ($filterBy == '0') selected @endif>Filter by:</option>
-                <optgroup label="Horse name">
-                    @foreach ($horses as $horse)
-                        <option value="{{ $horse->id }}" @if ($filterBy == $horse->id) selected @endif>
-                            {{ $horse->name }} #{{ $horse->id }}
+                <optgroup label="Author">
+                    @foreach ($authors as $author)
+                        <option value="{{ $author->id }}" @if ($filterBy == $author->id) selected @endif>
+                            {{ $author->name }} {{ $author->surname }}
                         </option>
                     @endforeach
             </select>
@@ -20,15 +20,15 @@
 </div>
 <div class="control">
     <div class="select">
-        @if ($betters->count() != 0)
+        @if ($books->count() != 0)
             <select name='sort'>
                 <option disabled selected>Sort by:</option>
                 <optgroup label="Ascending">
-                    <option @if ($sortBy == 'name_asc') selected @endif value='name_asc'>Better name</option>
-                    <option @if ($sortBy == 'bet_asc') selected @endif value='bet_asc'>Bet size</option>
+                    <option @if ($sortBy == 'title_asc') selected @endif value='title_asc'>Book title</option>
+                    <option @if ($sortBy == 'pages_asc') selected @endif value='pages_asc'>Book pages</option>
                 <optgroup label="Descending">
-                    <option @if ($sortBy == 'name_desc') selected @endif value='name_desc'>Better name</option>
-                    <option @if ($sortBy == 'bet_desc') selected @endif value='bet_desc'>Bet size</option>
+                    <option @if ($sortBy == 'title_desc') selected @endif value='title_desc'>Book title</option>
+                    <option @if ($sortBy == 'pages_desc') selected @endif value='pages_desc'>Book pages</option>
             </select>
         @endif
     </div>
@@ -37,6 +37,6 @@
     <button type="submit" class="button is-primary">Select</button>
 </div>
 <div class="control">
-    <a href="{{ route('better.index') }}" class="button is-outlined is-danger">Clear filter</a>
+    <a href="{{ route('book.index') }}" class="button is-outlined is-danger">Clear filter</a>
 </div>
 {{-- FILTERING ENDS --}}

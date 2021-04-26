@@ -10,7 +10,7 @@
                     <div class="column is-3 is-flex is-flex-direction-column is-align-items-center">
                         <figure class="image is-128x128">
                             <img class="is-rounded" src="{{ $author->picture }}"
-                                onerror="this.src='{{ asset('img/authors/default_pic.png') }}'">
+                                onerror="this.src='{{ asset('img/default_pic.png') }}'">
                         </figure>
                         <button class='button is-info is-small is-outline my-3' form="removePicForm">Remove picture</button>
                     </div>
@@ -30,7 +30,7 @@
                             @enderror
                         </div>
                         <div class="field">
-                            <label class='label'>Surame</label>
+                            <label class='label'>Surname</label>
                             <div class="control has-icons-right">
                                 <input class="input" type="text" name="author_surname" placeholder="Surname"
                                     value={{ old('author_surname', $author->surname) }}>

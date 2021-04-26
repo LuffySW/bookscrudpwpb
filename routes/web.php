@@ -27,19 +27,16 @@ Route::middleware(['auth'])->group(function () {
         Route::post('update/{book}', [BookController::class, 'update'])->name('book.update');
         Route::post('delete/{book}', [BookController::class, 'destroy'])->name('book.delete');
         Route::post('store', [BookController::class, 'store'])->name('book.store');
-        
-        Route::post('pictureDelete/{book}', [BookController::class, 'deletePicture'])->name('book.picture-delete');
-        // JS 
-        Route::get('show/{book}', [BookController::class, 'show'])->name('book.show');
     });
     
     Route::group(['prefix' => 'authors'], function () {
         Route::get('/', [AuthorController::class, 'index'])->name('author.index');
         Route::get('edit/{author}', [AuthorController::class, 'edit'])->name('author.edit');
-        Route::get('create', [AuthorController::class, 'create'])->name('author.create');
         Route::post('update/{author}', [AuthorController::class, 'update'])->name('author.update');
         Route::post('delete/{author}', [AuthorController::class, 'destroy'])->name('author.delete');
         Route::post('store', [AuthorController::class, 'store'])->name('author.store');
+
+        Route::get('show/{author}', [AuthorController::class, 'show'])->name('author.show');
 
         Route::post('pictureDelete/{author}', [AuthorController::class, 'deletePicture'])->name('author.picture-delete');
 
