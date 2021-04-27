@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
         $authors = 20;
 
         DB::table('users')->insert([
-            'name' => 'Gvidas',
-            'email' => 'demo@demo.lt',
+            'name' => 'demo',
+            'email' => 'demo@demo.com',
             'password' => Hash::make('demodemo'),
         ]);
         foreach (range(1, $authors) as $_) {

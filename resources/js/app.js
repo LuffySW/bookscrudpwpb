@@ -16,7 +16,7 @@ $("#summernote").summernote({
     ],
     callbacks: {
         onKeydown: function (e) {
-            var limitChars = 500;
+            var limitChars = 1000;
             var chars = $(".note-editable").text();
             var totalChars = limitChars - chars.length;
 

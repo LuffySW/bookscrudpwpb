@@ -40,7 +40,7 @@
             @endcomponent
             <aside class='menu has-background-grey-dark is-hidden-touch el-sticky '>
                 <p class="menu-label">
-                    General
+                    Menu
                 </p>
                 <ul class="menu-list">
                     <li>

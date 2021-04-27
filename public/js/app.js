@@ -1861,7 +1861,7 @@ $("#summernote").summernote({
   toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear"]], ["color", ["color"]], ["para", ["ul", "ol", "paragraph"]]],
   callbacks: {
     onKeydown: function onKeydown(e) {
-      var limitChars = 500;
+      var limitChars = 1000;
       var chars = $(".note-editable").text();
       var totalChars = limitChars - chars.length; //Update value
 
