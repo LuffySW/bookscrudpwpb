@@ -80,7 +80,7 @@
                         @foreach ($authors as $author)
                             <tr class='author-row'>
                                 <td>{{ $author->id }}</td>
-                                <td class='author-quickshow' data-show="quickview" data-target="quickviewDefault"
+                                <td class='author-quickshow has-text-info' data-show="quickview" data-target="quickviewDefault"
                                     data-url={{ route('author.show', $author) }}>{{ $author->name }}</td>
                                 <td>{{ $author->surname }}</td>
                                 <td>

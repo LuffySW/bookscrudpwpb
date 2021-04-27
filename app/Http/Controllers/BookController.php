@@ -70,7 +70,7 @@ class BookController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'book_title' => ['required', 'between:2,255', 'regex:/^[\s\w-]*$/'],
+                'book_title' => ['required', 'between:2,255', "regex:/^[ \s\w+(?@.\';,\/&+-@)]*$/"],
                 'book_isbn' => ['required', 'digits:13', 'numeric', 'unique:App\Models\Book,isbn'],
                 'book_pages' => 'required|between:1,1000|numeric',
                 'book_description' => 'max:500',
@@ -135,7 +135,7 @@ class BookController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'book_title' => ['required', 'between:2,255', 'regex:/^[\s\w-]*$/'],
+                'book_title' => ['required', 'between:2,255', "regex:/^[ \s\w+(?@.\';,\/&+-@)]*$/"],
                 'book_isbn' => ['required', 'digits:13', 'numeric'],
                 'book_pages' => 'required|between:1,1000|numeric',
                 'book_description' => 'max:500',

@@ -123,7 +123,7 @@ class AuthorController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'author_name' => ['required', 'between:3,64', 'alpha'],
+                'author_name' => ['required', 'between:3,64', "regex:/^[ \s\w+(?\']*$/"],
                 'author_surname' => ['required', 'between:3,64', 'alpha'],
             ],
             [

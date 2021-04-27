@@ -1,11 +1,11 @@
 @extends('layouts.app')
-<section class="hero is-large is-info">
+@section('content')
     <div class="hero-body">
         <p class="title">
-            BIT Library
+            "Library"
         </p>
         <p class="subtitle">
             Use menu to navigate the website
         </p>
     </div>
-</section>
+@endsection

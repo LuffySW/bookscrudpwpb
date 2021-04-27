@@ -59,8 +59,7 @@
                         </ul>
                     </li>
             </aside>
-            <div class="section">
-
+            <div class="section @if (Route::is('home')) hero is-large is-info @endif">
                 <div class="columns is-centered is-multiline">
                     @yield('content')
                 </div>
