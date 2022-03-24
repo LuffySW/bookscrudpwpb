@@ -2,10 +2,10 @@
 @section('content')
     <div class="hero-body">
         <p class="title">
-            "Library"
+            "Book Crud App"
         </p>
         <p class="subtitle">
-            Use menu to navigate the website
+            Luthfi Satrio W - XI RPL 1
         </p>
     </div>
 @endsection
